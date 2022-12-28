@@ -13,6 +13,8 @@
     "@types/react-dom": "^18.0.9",
     "axios": "^1.2.1",
     "esbuild-wasm": "0.8.27",
+    "prettier": "^2.2.1",
+    "monaco-editor": "0.21.2",
     "localforage": "^1.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
