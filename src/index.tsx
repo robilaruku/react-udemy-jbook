@@ -1,3 +1,4 @@
+import "bulmaswatch/superhero/bulmaswatch.min.css";
 import * as esbuild from "esbuild-wasm";
 import { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
@@ -41,7 +42,7 @@ const App = () => {
     });
 
     // setCode(result.outputFiles[0].text);
-    iframe.current.contentWindow.postMessage(result.outputFiles[0].text, '*')
+    iframe.current.contentWindow.postMessage(result.outputFiles[0].text, "*");
   };
 
   const html = `
@@ -66,22 +67,25 @@ const App = () => {
 
   return (
     <>
-      <CodeEditor 
-        initialValue="const a = 1;" 
+      <CodeEditor
+        initialValue="const a = 1;"
         onChange={(value) => setInput(value)}
       />
       <textarea
         value={input}
-        onChange={(e) => 
-          setInput(e.target.value)
-        }
+        onChange={(e) => setInput(e.target.value)}
       ></textarea>
       <div>
         <button onClick={onClick}>Submit</button>
       </div>
       <pre>{code}</pre>
       <br></br>
-      <iframe title="code preview" ref={iframe} sandbox="allow-scripts" srcDoc={html}></iframe>
+      <iframe
+        title="code preview"
+        ref={iframe}
+        sandbox="allow-scripts"
+        srcDoc={html}
+      ></iframe>
     </>
   );
 };
